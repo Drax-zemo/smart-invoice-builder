@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>The Unique स्वाद Invoice</title>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+</head>
+<body>
+  <div class="container">
+    <header>
+      <h1>The Unique स्वाद</h1>
+    </header>
+    
+    <div class="customer-details">
+      <h3>Customer Details</h3>
+      <div class="form-group">
+        <label for="customerName">Name</label>
+        <input type="text" id="customerName" placeholder="Enter customer name">
+      </div>
+      <div class="form-group">
+        <label for="customerPhone">Phone</label>
+        <input type="text" id="customerPhone" placeholder="Enter phone number">
+      </div>
+    </div>
+    
+    <div class="custom-order-container">
+      <h2>Order Items</h2>
+      <div id="orderItemsContainer">
+        <div class="order-item">
+          <input type="text" class="item-name" placeholder="Item name">
+          <input type="number" class="price-input" placeholder="Price" min="0">
+          <input type="number" class="qty-input" placeholder="Qty" min="1" value="1">
+          <button class="remove-item-btn" onclick="removeOrderItem(this)"><i class="fas fa-times"></i></button>
+        </div>
+      </div>
+      <button class="add-item-btn" onclick="addOrderItem()">
+        <i class="fas fa-plus"></i> Add Item
+      </button>
+      
+      <div class="payment-options">
+        <h3>Payment Method:</h3>
+        <div class="payment-option">
+          <input type="radio" id="cashPayment" name="paymentMethod" value="Cash" checked>
+          <label for="cashPayment">Cash</label>
+        </div>
+        <div class="payment-option">
+          <input type="radio" id="onlinePayment" name="paymentMethod" value="Online">
+          <label for="onlinePayment">Online</label>
+        </div>
+      </div>
+    </div>
+    
+    <div class="actions">
+      <button id="generateInvoice">
+        <i class="fas fa-file-invoice-dollar"></i>
+        Generate Invoice
+      </button>
+      <button id="resetOrder">
+        <i class="fas fa-redo"></i>
+        Reset Order
+      </button>
+    </div>
+    
+    <div id="invoice">
+      <div class="restaurant-info">
+        <h3>The Unique स्वाद</h3>
+        <p>Buddheswar chauraha near Auto stand</p>
+        <p>Phone: 7510097806</p>
+      </div>
+      
+      <div class="invoice-header">
+        <h2>Invoice</h2>
+        <span id="invoiceDate"></span>
+      </div>
+      
+      <div class="customer-info" id="customerInfo"></div>
+      
+      <div class="invoice-items" id="invoiceItems">
+        <div class="no-items">No items selected</div>
+      </div>
+      
+      <div class="invoice-total" id="invoiceTotal">Total: ₹0</div>
+      <div class="payment-method" id="paymentMethod">Payment Method: Cash</div>
+      
+      <div class="thank-you">
+        <p>Thank you for your order!</p>
+        <p>Visit us again</p>
+      </div>
+    </div>
+    
+    <button id="printInvoice">
+      <i class="fas fa-print"></i>
+      Print Invoice
+    </button>
+  </div>
+</body>
+</html>
