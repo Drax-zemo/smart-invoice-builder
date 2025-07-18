@@ -15,8 +15,6 @@
       <h1> The Unique स्वाद Invoice Generator </h1>
     </header>
 
-    
-    
     <div class="customer-details">
       <h3>Customer Details</h3>
       <div class="form-group">
@@ -35,15 +33,14 @@
         <!-- <div class="order-item">
   <select class="item-select" style="width: 300px; height: 50px;" onchange="updatePrice(this)">
     <option value="" style=" height: 100px;">Select Item</option>
-    <!-- Options will be populated from menu.js -->
-  <!-- </select>
+    Options will be populated from menu.js
+  </select>
   <input type="number" class="price-input" placeholder="Price" min="0" readonly>
   <input type="number" class="qty-input" placeholder="Qty" min="1" value="1">
   <button class="remove-item-btn" onclick="removeOrderItem(this)">
     <i class="fas fa-times"></i>
   </button>
 </div> -->
-
 
 <div class="order-item">
   <select class="item-select" style="width: 300px; height: 50px;" onchange="handleItemSelect(this)">
@@ -62,8 +59,6 @@
     <i class="fas fa-times"></i>
   </button>
 </div>
-
-
 
       </div>
       <button class="add-item-btn" onclick="addOrderItem()">
@@ -125,6 +120,22 @@
       <i class="fas fa-print"></i>
       Print Invoice
     </button>
+
+    <!-- Order History Section -->
+    <div class="history-section">
+      <h2>Order History</h2>
+      <div class="history-controls">
+        <button id="refreshHistory">
+          <i class="fas fa-sync-alt"></i> Refresh History
+        </button>
+        <button id="clearHistory">
+          <i class="fas fa-trash-alt"></i> Clear History
+        </button>
+      </div>
+      <div id="orderHistoryContainer" class="order-history-container">
+        <!-- History will be loaded here automatically -->
+      </div>
+    </div>
   </div>
   <script src="script.js"></script>
 </body>
